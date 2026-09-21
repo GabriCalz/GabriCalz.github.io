@@ -62,9 +62,18 @@
     .bio-grid p { font-size:.92rem; }
     .topics { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
     .topics span { padding:7px 10px; border:1px solid rgba(146,217,204,.18); border-radius:5px; color:#b9ceca; font-size:.72rem; }
+    .personal-card { width:min(1040px,92vw); display:grid; grid-template-columns:1.25fr .75fr; overflow:hidden; border:1px solid rgba(146,217,204,.2); border-radius:20px; background:rgba(5,17,20,.78); backdrop-filter:blur(16px); box-shadow:0 30px 90px rgba(0,0,0,.3); }
+    .personal-photo { min-height:520px; position:relative; overflow:hidden; }
+    .personal-photo img { width:100%; height:100%; object-fit:cover; object-position:center; position:absolute; inset:0; filter:saturate(.88) contrast(1.04); transition:transform .8s ease; }
+    .personal-card:hover .personal-photo img { transform:scale(1.025); }
+    .personal-photo::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,transparent 55%,rgba(5,17,20,.48)); pointer-events:none; }
+    .personal-copy { padding:clamp(28px,5vw,58px); display:flex; flex-direction:column; justify-content:center; }
+    .personal-copy h2 { margin-bottom:18px; }
+    .activity-list { display:flex; flex-wrap:wrap; gap:9px; margin-top:24px; }
+    .activity-list span { padding:9px 12px; border:1px solid rgba(82,246,209,.22); border-radius:999px; color:#cde2de; font:650 .7rem/1 ui-monospace,SFMono-Regular,monospace; }
     .progress { position:fixed; right:24px; top:50%; width:2px; height:140px; transform:translateY(-50%); background:rgba(255,255,255,.12); z-index:10; }
     .progress b { display:block; width:100%; height:0; background:var(--cyan); box-shadow:0 0 12px var(--cyan); }
-    @media (max-width:700px) { header{padding:18px}.status{display:none}.chapter{padding:14vh 18px;align-items:flex-end}.chapter:nth-child(even){justify-content:flex-start}.copy{padding:23px}.metrics{grid-template-columns:1fr}.progress{right:10px}.hero{padding-bottom:11vh}.paper{grid-template-columns:55px 1fr}.paper .arrow{display:none}.bio-grid{grid-template-columns:1fr} }
+    @media (max-width:700px) { header{padding:18px}.status{display:none}.chapter{padding:14vh 18px;align-items:flex-end}.chapter:nth-child(even){justify-content:flex-start}.copy{padding:23px}.metrics{grid-template-columns:1fr}.progress{right:10px}.hero{padding-bottom:11vh}.paper{grid-template-columns:55px 1fr}.paper .arrow{display:none}.bio-grid{grid-template-columns:1fr}.personal-card{grid-template-columns:1fr}.personal-photo{min-height:360px}.personal-photo::after{background:linear-gradient(0deg,rgba(5,17,20,.65),transparent 45%)} }
     @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto}.status i,.scroll-cue span::after{animation:none} }
   </style>
 </head>
@@ -91,6 +100,7 @@
       <a class="paper" href="https://doi.org/10.23919/ICCAS63016.2024.10773383" target="_blank" rel="noreferrer"><span class="year">2024</span><span><h3>Decentralized Multi-Agent Reinforcement Learning Exploration with Inter-Agent Communication-Based Action Space</h3><p>24th International Conference on Control, Automation and Systems (ICCAS)</p></span><span class="arrow">↗</span></a>
     </div><div class="links"><a href="https://scholar.google.com/citations?user=68TiuOYAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">View complete Google Scholar profile ↗</a></div></div></section>
     <section class="chapter"><div class="copy"><div class="eyebrow">05 / Academic context</div><h2>Research grounded in real robotic systems.</h2><p>My work combines simulation, learning-based decision-making, graph representations, constrained communication, and experimental validation toward deployable autonomy for public-safety missions.</p><div class="bio-grid"><div><h3>Affiliation</h3><p>Robotics and AI Group<br>Luleå University of Technology<br>Luleå, Sweden</p></div><div><h3>Support &amp; projects</h3><p>Wallenberg AI, Autonomous Systems and Software Program (WASP) and EU Horizon Europe research activities.</p></div></div></div></section>
+    <section class="chapter"><div class="personal-card"><div class="personal-photo"><img src="assets/gabriele-outdoors.jpg" alt="Gabriele Calzolari hiking in a mountain landscape" loading="lazy"></div><div class="personal-copy"><div class="eyebrow">06 / Beyond research</div><h2>Outside the lab.</h2><p>Beyond robotics, I enjoy swimming, hiking, and spending time outdoors. These activities give me the space to recharge, explore new places, and approach research challenges with renewed perspective.</p><div class="activity-list"><span>Swimming</span><span>Hiking</span><span>Outdoor activities</span></div></div></div></section>
     <footer><div class="copy"><div class="eyebrow">Contact</div><h2>Let’s build safer autonomous systems.</h2><p>Research collaborations, robotics projects, and academic enquiries.</p><div class="links"><a href="mailto:gabriele.calzolari@ltu.se">Email</a><a href="https://www.linkedin.com/in/gabriele-calzolari/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/GabriCalz" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.ltu.se/en/staff/g/gabriele-calzolari" target="_blank" rel="noreferrer">LTU profile</a></div><a class="button" href="#" onclick="scrollTo({top:0,behavior:'smooth'});return false">Back to top ↑</a></div></footer>
   </main>
 <script>
